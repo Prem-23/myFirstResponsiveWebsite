@@ -193,12 +193,19 @@ footer {
         text-align: center;
         justify-content: center;
         align-items: center;
-        transform: translateX(-50%);
+        transform: translateX(-30%);
     }
     header nav ul li a {
         font-size: 20px;
     }
     header nav ul li a.home::before {
         display: none;
+    }
+    footer {
+        width: 120%;
+    }
+    section {
+        font-size: 80px;
+        transform: translateX(10%);
     }
 }
