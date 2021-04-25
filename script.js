@@ -6,6 +6,7 @@ let icon = document.querySelector('.fa');
 let icon1 = document.querySelector('.arrow .fa');
 let arrow = document.querySelector('.arrow');
 let body = document.querySelector('body');
+let hyperRef = document.querySelector('a[href = "#foot"]');
 
 document.onclick = function(e) {
     if (e.target.id !== 'navBar' && e.target.id !== 'toggle') {
@@ -30,11 +31,13 @@ icon.addEventListener('click', function() {
 })
 
 icon1.addEventListener('click', function() {
-    if (icon1.className == 'fa fa-angle-double-down') {
+    if ((icon1.className == 'fa fa-angle-double-down')) {
         icon1.className = icon1.className.replace('fa-angle-double-down', 'fa-angle-double-up');
         arrow.classList.add('up');
+        hyperRef.setAttribute('href', '#foot');
     } else {
         icon1.className = icon1.className.replace('fa-angle-double-up', 'fa-angle-double-down');
         arrow.classList.remove('up');
+        hyperRef.setAttribute('href', '#home');
     }
 })
