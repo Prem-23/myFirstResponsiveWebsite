@@ -206,6 +206,6 @@ footer {
     }
     section {
         font-size: 80px;
-        transform: translateX(10%);
+        margin-left: 100px;
     }
 }
