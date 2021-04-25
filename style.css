@@ -8,6 +8,7 @@
 
 body {
     background: #ececec;
+    width: 100%;
 }
 
 header {
@@ -72,7 +73,7 @@ header #toggle {
     width: 30px;
     height: 30px;
     display: flex;
-    right: 10px;
+    right: 0px;
     align-items: center;
     cursor: pointer;
     justify-content: center;
@@ -145,6 +146,7 @@ section {
     font-size: 100px;
     font-weight: 600;
     color: rgba(0, 0, 0, 0.04);
+    width: 100%;
 }
 
 .arrow .fa {
@@ -155,6 +157,7 @@ section {
     right: 20px;
     bottom: 20px;
     color: #575858;
+    transition: .5s;
 }
 
 .arrow.up .fa {
@@ -165,6 +168,7 @@ section {
     right: 20px;
     bottom: 20px;
     color: #dad1d1;
+    transition: .5s;
 }
 
 footer {
@@ -184,6 +188,7 @@ footer {
     font-size: 30px;
     font-weight: 500;
     cursor: pointer;
+    transition: .5s;
 }
 
 @keyframes slideRight {
@@ -197,10 +202,11 @@ footer {
     }
 }
 
-@media (max-width: 6 00px) {
+@media (max-width: 600px) {
     header nav {
         transform: translateY(350px);
         overflow: visible;
+        flex: 0;
     }
     header nav ul {
         display: inline-block;
@@ -215,9 +221,6 @@ footer {
     }
     header nav ul li a.home::before {
         display: none;
-    }
-    footer {
-        width: 200%;
     }
     section {
         font-size: 80px;
