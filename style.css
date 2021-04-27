@@ -3,267 +3,243 @@
     padding: 0;
     box-sizing: border-box;
     scroll-behavior: smooth;
-    transition: .4s;
 }
 
-body {
-    background: #ececec;
-    width: 100%;
-}
+
+/* Header */
 
 header {
     position: fixed;
     width: 100%;
-    height: 50px;
+    background: #ececec;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 0, 5), #dad1d1);
-    padding: 0 10px;
-    user-select: none;
+    padding: 6px 10px;
 }
 
-header h1 {
-    position: absolute;
-    left: 10px;
-}
 
-header nav {
-    overflow: hidden;
-    position: relative;
-    flex: 1;
-}
+/* nav */
 
-header nav ul {
+nav ul {
+    display: flex;
     list-style: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-    transition: .5s;
 }
 
-header nav ul.active {
-    margin-left: 0;
-    opacity: 1;
-    transition: .5s;
+nav ul li {
+    padding: 0 30px;
 }
 
-header nav ul.active li a {
-    animation: slideRight .5s ease-in-out forwards;
-    animation-delay: calc(.2s * var(--i));
-}
-
-header nav ul li {
-    margin: 0 10px;
-    position: relative;
-}
-
-header nav ul li a {
+nav ul li a {
     text-decoration: none;
-    font-size: 11px;
+    position: relative;
     color: rgba(0, 0, 0, 0.7);
-    letter-spacing: 1.5px;
     text-transform: uppercase;
-    opacity: 0;
+    font-size: 11px;
+    letter-spacing: 2px;
 }
 
-header #toggle {
-    position: absolute;
-    width: 30px;
-    height: 30px;
+nav ul li a.active {
+    color: #0000FF;
+    transition: .5s;
+}
+
+
+/* moon and sun */
+
+.options {
     display: flex;
-    right: 0px;
+    justify-content: center;
+    align-items: center;
+}
+
+.options .fa.fa-moon-o,
+.options .fa.fa-sun-o {
+    position: absolute;
+    right: 100px;
+    cursor: pointer;
+}
+
+.options .fa.fa-moon-o:hover,
+.options .fa.fa-sun-o:hover {
+    animation: rotate .5s forwards;
+    animation-duration: .5s;
+}
+
+button {
+    position: absolute;
+    border: none;
+    outline: none;
+    color: #0000FF;
+    font-weight: 900;
+    text-transform: capitalize;
+    letter-spacing: 1.5px;
+    font-size: 13px;
+    cursor: pointer;
+    right: 10px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+button:hover {
+    color: #8e8ef5;
+    transition: .5s;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0);
+    }
+    25% {
+        transform: rotate(45deg);
+    }
+    50% {
+        transform: rotate(0);
+    }
+    75% {
+        transform: rotate(-45deg);
+    }
+    100% {
+        transform: rotate(0);
+    }
+}
+
+.icon {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+}
+
+.icon a .fa.fa-angle-double-down,
+.icon a .fa.fa-angle-double-up {
+    font-size: 23px;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.icon a .fa.fa-angle-double-down:hover,
+.icon a .fa.fa-angle-double-up:hover {
+    font-size: 25px;
+}
+
+.toggle {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
     align-items: center;
     cursor: pointer;
-    justify-content: center;
 }
 
-header #toggle::after {
+.toggle::before {
     position: absolute;
     content: '';
-    width: 20px;
-    height: 2px;
-    background: #575858;
-    transform: translateY(-6px);
-    box-shadow: 0 6px #575858;
-    transition: .8s;
+    width: 24px;
+    height: 1px;
+    background: rgba(0, 0, 0, 0.7);
+    box-shadow: 0 7px rgba(0, 0, 0, 0.7);
+    transform: translateY(-7px);
 }
 
-header #toggle::before {
+.toggle::after {
     position: absolute;
     content: '';
-    width: 20px;
-    height: 2px;
-    background: #575858;
-    transform: translateY(6px);
-    transition: .8s;
-}
-
-header #toggle.active::after {
-    position: absolute;
-    content: '';
-    width: 20px;
-    height: 2px;
-    background: #575858;
-    transform: rotate(135deg);
-    transition: .8s;
+    width: 24px;
+    height: 1px;
+    background: rgba(0, 0, 0, 0.7);
     box-shadow: none;
+    transform: translateY(7px);
 }
 
-header #toggle.active::before {
-    position: absolute;
-    content: '';
-    width: 20px;
-    height: 2px;
-    background: #575858;
-    transform: rotate(225deg);
-    transition: .8s;
-}
 
-header .theme {
-    position: absolute;
-    right: 50px;
-}
+/* section and footer */
 
-header .theme .fa.fa-sun-o {
-    font-size: 17px;
-    color: #ece8e8;
-    cursor: pointer;
-}
-
-header .theme .fa.fa-moon-o {
-    font-size: 17px;
-    color: rgba(0, 0, 0, 0.8);
-    cursor: pointer;
-}
-
-section {
+section,
+footer {
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     font-size: 100px;
-    font-weight: 600;
-    color: rgba(0, 0, 0, 0.04);
-    width: 100%;
-}
-
-.arrow .fa {
-    position: fixed;
-    font-size: 25px;
-    font-weight: 500;
-    cursor: pointer;
-    right: 20px;
-    bottom: 20px;
-    color: #575858;
-    transition: .5s;
-}
-
-.arrow.up .fa {
-    position: fixed;
-    font-size: 25px;
-    font-weight: 500;
-    cursor: pointer;
-    right: 20px;
-    bottom: 20px;
-    color: #dad1d1;
-    transition: .5s;
+    background-color: #dfdfdf;
+    color: rgba(0, 0, 0, 0.05);
 }
 
 footer {
-    min-height: 60vh;
-    width: 100%;
-    background: #343535;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 80px;
-    font-weight: 600;
-    letter-spacing: 2px;
-    color: rgba(0, 0, 0, 0.08);
+    background: linear-gradient(to bottom, #cac7c7, #acacac);
+    min-height: 70vh;
 }
 
-.arrow .fa:hover {
-    font-size: 30px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: .5s;
-}
-
-@keyframes slideRight {
-    0% {
-        transform: translateX(100px);
-        opacity: 0;
+@media (max-width: 800px) {
+    nav ul li {
+        padding: 0 10px;
     }
-    100% {
-        transform: translateX(0px);
-        opacity: 1;
-    }
-}
-
-@media (max-width: 600px) {
-    header nav {
-        transform: translateY(350px);
-        overflow: visible;
-        flex: 0;
-    }
-    header nav ul {
-        display: inline-block;
-        line-height: 50px;
-        text-align: center;
-        justify-content: center;
-        align-items: center;
-        transform: translateX(-30%);
-    }
-    header nav ul li a {
-        font-size: 20px;
-    }
-    header nav ul li a.home::before {
+    button {
         display: none;
     }
-    section {
-        font-size: 80px;
-        margin-left: 100px;
+    .options .fa.fa-sign-in {
+        font-size: 20px;
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform: translateY(-50%);
+        right: 20px;
+        color: #6060ee;
+        cursor: pointer;
+    }
+    .options .fa.fa-moon-o,
+    .options .fa.fa-sun-o {
+        position: absolute;
+        right: 65px;
+    }
+    .options .fa.fa-sign-in:hover {
+        font-size: 22px;
     }
 }
 
 
-/* Dark Theme */
+/* darkLight Mode */
 
 body.darkLight header {
-    background-color: #575858;
-}
-
-body.darkLight header h1 {
-    color: #f5f3f3;
+    background-color: #858585;
 }
 
 body.darkLight header nav ul li a {
+    position: relative;
     color: #ececec;
 }
 
-body.darkLight header #toggle::after {
-    box-shadow: 0 6px white;
-    background: white;
+body.darkLight header nav ul li a.active {
+    color: rgba(0, 0, 0, 0.7);
 }
 
-body.darkLight header #toggle.active::after {
-    box-shadow: none;
+body.darkLight header .options .fa.fa-sun-o {
+    color: #ffff;
 }
 
-body.darkLight header #toggle::before {
-    background: white;
+body.darkLight header .options .fa.fa-sign-in {
+    color: #ececec;
+}
+
+body.darkLight header .options button {
+    background: #858585;
+    color: #ececec;
+}
+
+body.darkLight header .options button:hover {
+    color: rgba(0, 0, 0, 0.7);
 }
 
 body.darkLight section {
-    background: #343535;
+    background: rgba(0, 0, 0, 0.7);
 }
 
-body.darkLight .arrow .fa {
-    color: #dad1d1;
+body.darkLight .icon a .fa.fa-angle-double-down,
+body.darkLight .icon a .fa.fa-angle-double-up {
+    color: #ececec;
 }
 
 body.darkLight footer {
-    background: #575858;
+    background: #535252;
 }
