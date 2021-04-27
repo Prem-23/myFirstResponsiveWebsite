@@ -37,3 +37,22 @@ icon1.addEventListener('click', function() {
         hyperRef.setAttribute('href', '#home');
     }
 })
+
+// toggle
+
+let toggleList = document.getElementById('toggle');
+let navBar = document.getElementById('navBar');
+
+// document.onclick = function(e) {
+//     if (e.target.id !== 'navBar' && e.target.id !== 'toggleList') {
+//         toggleList.classList.remove('active');
+//         navBar.classList.remove('show');
+//     }
+// }
+
+toggleList.addEventListener('click', function() {
+    toggleList.classList.toggle('active');
+    navBar.classList.toggle('show');
+})
+
+// outside touch
