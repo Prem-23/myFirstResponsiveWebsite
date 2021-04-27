@@ -21,6 +21,10 @@ header {
 
 /* nav */
 
+nav {
+    position: relative;
+}
+
 nav ul {
     display: flex;
     list-style: none;
@@ -64,6 +68,10 @@ nav ul li a.active {
 .options .fa.fa-sun-o:hover {
     animation: rotate .5s forwards;
     animation-duration: .5s;
+}
+
+.options .fa.fa-sign-in {
+    display: none;
 }
 
 button {
@@ -118,36 +126,6 @@ button:hover {
 .icon a .fa.fa-angle-double-down:hover,
 .icon a .fa.fa-angle-double-up:hover {
     font-size: 25px;
-}
-
-.toggle {
-    position: relative;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-}
-
-.toggle::before {
-    position: absolute;
-    content: '';
-    width: 24px;
-    height: 1px;
-    background: rgba(0, 0, 0, 0.7);
-    box-shadow: 0 7px rgba(0, 0, 0, 0.7);
-    transform: translateY(-7px);
-}
-
-.toggle::after {
-    position: absolute;
-    content: '';
-    width: 24px;
-    height: 1px;
-    background: rgba(0, 0, 0, 0.7);
-    box-shadow: none;
-    transform: translateY(7px);
 }
 
 
@@ -205,6 +183,10 @@ body.darkLight header {
     background-color: #858585;
 }
 
+body.darkLight header h1 {
+    color: #ececec;
+}
+
 body.darkLight header nav ul li a {
     position: relative;
     color: #ececec;
@@ -242,4 +224,103 @@ body.darkLight .icon a .fa.fa-angle-double-up {
 
 body.darkLight footer {
     background: #535252;
+}
+
+body.darkLight header .toggle::after,
+body.darkLight header .toggle::before {
+    background-color: #ececec;
+}
+
+body.darkLight header .toggle::before {
+    box-shadow: 0 6px #ececec;
+}
+
+@media (max-width:600px) {
+    header h1,
+    header.options,
+    header .toggle {
+        z-index: 10000;
+    }
+    nav {
+        width: 0%;
+        position: absolute;
+        display: flex;
+        left: 0;
+        justify-content: center;
+        align-items: center;
+        transform: translateY(300px);
+        background: #ececec;
+        height: 94vh;
+        overflow: hidden;
+        transition: .5s;
+    }
+    nav.show {
+        width: 100%;
+    }
+    nav ul {
+        display: inline-block;
+        text-align: center;
+        line-height: 50px;
+    }
+    nav ul li a {
+        font-size: 17px;
+    }
+    #toggle {
+        position: relative;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    }
+    #toggle::before {
+        position: absolute;
+        content: '';
+        width: 20px;
+        height: 1px;
+        background: rgba(0, 0, 0, 0.7);
+        box-shadow: 0 6px rgba(0, 0, 0, 0.7);
+        transform: translateY(-6px);
+        transition: .5s;
+    }
+    #toggle::after {
+        position: absolute;
+        content: '';
+        width: 20px;
+        height: 1px;
+        background: rgba(0, 0, 0, 0.7);
+        transform: translateY(6px);
+        transition: .5s;
+    }
+    #toggle.active::before {
+        position: absolute;
+        content: '';
+        width: 20px;
+        height: 1px;
+        background: rgba(0, 0, 0, 0.7);
+        box-shadow: none;
+        transform: rotate(225deg);
+        transition: .5s;
+    }
+    #toggle.active::after {
+        position: absolute;
+        content: '';
+        width: 20px;
+        height: 1px;
+        background: rgba(0, 0, 0, 0.7);
+        transform: rotate(135deg);
+        transition: .5s;
+    }
+    .options .fa.fa-moon-o,
+    .options .fa.fa-sun-o {
+        position: absolute;
+        right: 95px;
+    }
+    .options .fa.fa-sign-in {
+        right: 60px;
+    }
+    body.darkLight nav {
+        background-color: #858585;
+    }
 }
