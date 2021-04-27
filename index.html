@@ -5,31 +5,37 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
 
 <body>
-    <header id="head">
+    <header>
         <h1>logo</h1>
         <nav>
-            <ul id="navbar">
-                <li><a style="--i:1;" href="#home">Home</a></li>
-                <li><a style="--i:2;" href="#about">About</a></li>
-                <li><a style="--i:3;" href="#portfolio">Portfolio</a></li>
-                <li><a style="--i:4;" href="#blogs">Blogs</a></li>
-                <li><a style="--i:5;" href="#contact">Contact</a></li>
+            <ul>
+                <li><a class="active" href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#blogs">Blogs</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
-        <div id="toggle"></div>
-        <div class="theme">
-            <i class="fa fa-moon-o" aria-hidden="true"></i>
+        <div>
+            <div class="options">
+                <i class="fa fa-moon-o moon"></i>
+                <button>Sign-up</button>
+                <div>
+                    <i class="fa fa-sign-in" aria-hidden="true"></i>
+                </div>
+            </div>
         </div>
     </header>
 
-    <div class="arrow">
-        <a href="#foot" class="fa fa-angle-double-down"></a>
+    <div class="icon">
+        <a href="#foot"><i class="fa fa-angle-double-down angle"></i></a>
     </div>
 
     <section id="home">Home</section>
