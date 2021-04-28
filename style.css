@@ -343,15 +343,15 @@ body.darkLight footer {
 
 /* max width at 380px */
 
-@media (max-width: 380px) {
+@media (max-width: 450px) {
     body {
-        width: 400px;
+        width: 450px;
     }
     header {
-        width: 400px;
+        width: 450px;
     }
     section {
-        width: 400px;
+        width: 450px;
     }
     header #toggle {
         right: 20px;
