@@ -345,13 +345,13 @@ body.darkLight footer {
 
 @media (max-width: 380px) {
     body {
-        width: 380px;
+        width: 400px;
     }
     header {
-        width: 380px;
+        width: 400px;
     }
     section {
-        width: 380px;
+        width: 400px;
     }
     header #toggle {
         right: 20px;
