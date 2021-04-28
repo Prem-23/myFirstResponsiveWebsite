@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     scroll-behavior: smooth;
+    user-select: none;
 }
 
 
@@ -226,22 +227,12 @@ body.darkLight footer {
     background: #535252;
 }
 
-body.darkLight header .toggle::after,
-body.darkLight header .toggle::before {
-    background-color: #ececec;
-}
-
-body.darkLight header .toggle::before {
-    box-shadow: 0 6px #ececec;
-}
-
 @media (max-width:600px) {
     header h1,
-    header.options,
-    header .toggle {
+    header.options {
         z-index: 10000;
     }
-    nav {
+    #navBar {
         width: 0%;
         position: absolute;
         display: flex;
@@ -250,11 +241,11 @@ body.darkLight header .toggle::before {
         align-items: center;
         transform: translateY(300px);
         background: #ececec;
-        height: 94vh;
+        height: 100vh;
         overflow: hidden;
         transition: .5s;
     }
-    nav.show {
+    #navBar.show {
         width: 100%;
     }
     nav ul {
@@ -265,62 +256,80 @@ body.darkLight header .toggle::before {
     nav ul li a {
         font-size: 17px;
     }
-    #toggle {
-        position: relative;
-        width: 40px;
-        height: 40px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        cursor: pointer;
-    }
-    #toggle::before {
-        position: absolute;
-        content: '';
-        width: 20px;
-        height: 1px;
-        background: rgba(0, 0, 0, 0.7);
-        box-shadow: 0 6px rgba(0, 0, 0, 0.7);
-        transform: translateY(-6px);
-        transition: .5s;
-    }
-    #toggle::after {
-        position: absolute;
-        content: '';
-        width: 20px;
-        height: 1px;
-        background: rgba(0, 0, 0, 0.7);
-        transform: translateY(6px);
-        transition: .5s;
-    }
-    #toggle.active::before {
-        position: absolute;
-        content: '';
-        width: 20px;
-        height: 1px;
-        background: rgba(0, 0, 0, 0.7);
-        box-shadow: none;
-        transform: rotate(225deg);
-        transition: .5s;
-    }
-    #toggle.active::after {
-        position: absolute;
-        content: '';
-        width: 20px;
-        height: 1px;
-        background: rgba(0, 0, 0, 0.7);
-        transform: rotate(135deg);
-        transition: .5s;
-    }
     .options .fa.fa-moon-o,
     .options .fa.fa-sun-o {
         position: absolute;
-        right: 95px;
+        right: 90px;
     }
     .options .fa.fa-sign-in {
-        right: 60px;
+        right: 55px;
     }
     body.darkLight nav {
+        background-color: #858585;
+    }
+    #toggle {
+        position: fixed;
+        width: 30px;
+        height: 30px;
+        right: 10px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        cursor: pointer;
+    }
+    #toggle::after {
+        content: '';
+        position: absolute;
+        width: 20px;
+        height: 1px;
+        background: #858585;
+        transform: translateY(-6px);
+        box-shadow: 0px 6px #858585;
+        transition: .5s;
+    }
+    #toggle::before {
+        content: '';
+        position: absolute;
+        width: 20px;
+        height: 1px;
+        background: #858585;
+        transform: translateY(6px);
+        transition: .5s;
+    }
+    #toggle.active::after {
+        content: '';
+        position: absolute;
+        width: 20px;
+        height: 1px;
+        background: #858585;
+        transform: translateY(0) rotate(135deg);
+        box-shadow: none;
+        transition: .5s;
+    }
+    #toggle.active::before {
+        content: '';
+        position: absolute;
+        width: 20px;
+        height: 1px;
+        background: #858585;
+        transform: translateY(0) rotate(225deg);
+        transition: .5s;
+    }
+    body.darkLight #toggle::after,
+    body.darkLight #toggle.active::after {
+        background-color: #ececec;
+    }
+    body.darkLight #toggle::after {
+        box-shadow: 0 6px #ececec;
+    }
+    body.darkLight #toggle.active::after {
+        box-shadow: none;
+    }
+    body.darkLight #toggle::before,
+    body.darkLight #toggle.active::before {
+        background-color: #ececec;
+    }
+    body.darkLight #navBar {
         background-color: #858585;
     }
 }
