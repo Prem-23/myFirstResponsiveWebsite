@@ -1,6 +1,16 @@
+let head1 = document.querySelector('h1');
+let sign = document.querySelector('.sign');
+let activeScreen = document.querySelectorAll('ul li a');
+let icon = document.querySelector('.moon');
+let body = document.querySelector('body');
+let icon1 = document.querySelector('.angle');
+let hyperRef = document.querySelector('a[href = "#foot"]');
+let toggleList = document.getElementById('toggle');
+let navBar = document.getElementById('navBar');
+
+
 // to select active Screen
 
-let activeScreen = document.querySelectorAll('ul li a');
 activeScreen.forEach(item => {
     item.addEventListener('click', function() {
         home = document.querySelector('.active');
@@ -10,11 +20,18 @@ activeScreen.forEach(item => {
         item.className += 'active';
     })
 })
+head1.addEventListener('click', function() {
+    toggleList.classList.remove('active');
+    navBar.classList.remove('show');
+})
+sign.addEventListener('click', function() {
+    toggleList.classList.remove('active');
+    navBar.classList.remove('show');
+})
 
 // moon to sun
 
-let icon = document.querySelector('.moon');
-let body = document.querySelector('body');
+
 icon.addEventListener('click', function() {
     if (icon.className == 'fa fa-moon-o moon') {
         icon.className = icon.className.replace('fa-moon-o', 'fa-sun-o');
@@ -28,9 +45,9 @@ icon.addEventListener('click', function() {
 
 // angle up and down
 
-let icon1 = document.querySelector('.angle');
-let hyperRef = document.querySelector('a[href = "#foot"]');
 icon1.addEventListener('click', function() {
+    toggleList.classList.remove('active');
+    navBar.classList.remove('show');
     if (icon1.className == 'fa fa-angle-double-down angle') {
         icon1.className = icon1.className.replace('fa-angle-double-down', 'fa-angle-double-up');
         hyperRef.setAttribute('href', '#foot');
@@ -41,9 +58,6 @@ icon1.addEventListener('click', function() {
 })
 
 // toggle
-
-let toggleList = document.getElementById('toggle');
-let navBar = document.getElementById('navBar');
 
 toggleList.onclick = function() {
     toggleList.classList.toggle('active');
