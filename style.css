@@ -149,34 +149,6 @@ footer {
     min-height: 70vh;
 }
 
-@media (max-width: 800px) {
-    nav ul li {
-        padding: 0 10px;
-    }
-    button {
-        display: none;
-    }
-    .options .fa.fa-sign-in {
-        font-size: 20px;
-        position: absolute;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        transform: translateY(-50%);
-        right: 20px;
-        color: #6060ee;
-        cursor: pointer;
-    }
-    .options .fa.fa-moon-o,
-    .options .fa.fa-sun-o {
-        position: absolute;
-        right: 65px;
-    }
-    .options .fa.fa-sign-in:hover {
-        font-size: 22px;
-    }
-}
-
 
 /* darkLight Mode */
 
@@ -227,7 +199,41 @@ body.darkLight footer {
     background: #535252;
 }
 
-@media (max-width:600px) {
+
+/* max width at 800px */
+
+@media (max-width: 800px) {
+    nav ul li {
+        padding: 0 10px;
+    }
+    button {
+        display: none;
+    }
+    .options .fa.fa-sign-in {
+        font-size: 20px;
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform: translateY(-50%);
+        right: 20px;
+        color: #6060ee;
+        cursor: pointer;
+    }
+    .options .fa.fa-moon-o,
+    .options .fa.fa-sun-o {
+        position: absolute;
+        right: 65px;
+    }
+    .options .fa.fa-sign-in:hover {
+        font-size: 22px;
+    }
+}
+
+
+/* max width at 700px */
+
+@media (max-width:700px) {
     header h1,
     header.options {
         z-index: 10000;
@@ -241,7 +247,7 @@ body.darkLight footer {
         align-items: center;
         transform: translateY(300px);
         background: #ececec;
-        height: 100vh;
+        height: 70vh;
         overflow: hidden;
         transition: .5s;
     }
@@ -331,5 +337,20 @@ body.darkLight footer {
     }
     body.darkLight #navBar {
         background-color: #858585;
+    }
+}
+
+
+/* max width at 380px */
+
+@media (max-width: 380px) {
+    body {
+        width: 380px;
+    }
+    header {
+        width: 380px;
+    }
+    header #toggle {
+        right: 15px;
     }
 }
