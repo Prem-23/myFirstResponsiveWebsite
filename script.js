@@ -4,6 +4,8 @@ let activeScreen = document.querySelectorAll('ul li a');
 activeScreen.forEach(item => {
     item.addEventListener('click', function() {
         home = document.querySelector('.active');
+        toggleList.classList.remove('active');
+        navBar.classList.remove('show');
         home.className = home.className.replace('active', '');
         item.className += 'active';
     })
@@ -43,16 +45,7 @@ icon1.addEventListener('click', function() {
 let toggleList = document.getElementById('toggle');
 let navBar = document.getElementById('navBar');
 
-// document.onclick = function(e) {
-//     if (e.target.id !== 'navBar' && e.target.id !== 'toggleList') {
-//         toggleList.classList.remove('active');
-//         navBar.classList.remove('show');
-//     }
-// }
-
-toggleList.addEventListener('click', function() {
+toggleList.onclick = function() {
     toggleList.classList.toggle('active');
     navBar.classList.toggle('show');
-})
-
-// outside touch
+}
