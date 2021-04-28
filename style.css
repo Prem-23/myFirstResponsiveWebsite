@@ -350,7 +350,10 @@ body.darkLight footer {
     header {
         width: 380px;
     }
+    section {
+        width: 380px;
+    }
     header #toggle {
-        right: 15px;
+        right: 20px;
     }
 }
