@@ -198,6 +198,10 @@ body.darkLight .icon a .fa.fa-angle-double-up {
 body.darkLight footer {
     background: #535252;
 }
+body.darkLight section,
+body.darkLight footer{
+    color: rgba(245, 245, 245, 0.2);
+}
 
 
 /* max width at 800px */
@@ -358,6 +362,9 @@ body.darkLight footer {
     }
     section {
         width: 450px;
+        font-size: 60px;
+    }
+    footer{
         font-size: 60px;
     }
     header #toggle {
